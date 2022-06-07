@@ -1,9 +1,12 @@
 <template>
   <div
     class="container"
-    :style="{
-      backgroundImage: `url(${dynamicCityBackgroundImage})`
-    }"
+    :style="dynamicCityBackgroundImage
+      ? {
+        backgroundImage: `url(${dynamicCityBackgroundImage})`
+      }
+      : null
+    "
     >
     <!-- Detailled forecast data (usually on the left) -->
     <div class="left-container">
@@ -109,7 +112,7 @@ export default {
 
 <style lang="stylus" scoped>
 .container
-  background-color #c5c5c5
+  background-color #BCCE85
   display flex
   min-height 100vh
   background-size cover

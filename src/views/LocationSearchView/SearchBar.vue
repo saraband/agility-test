@@ -58,7 +58,7 @@ export default {
       const locationsList = await fetchLocationsByName(newSearch)
       results.value = locationsList
 
-      // Automatically pre-select first rsult in the list
+      // Automatically pre-select first result in the list
       if (locationsList.length) {
         selectResult(0)
       }
