@@ -40,7 +40,7 @@
         <h4>Humidité - {{ data.humidity }}%</h4>
       </div>
       <div>
-        <h4>Pression - {{ data.pressure }}%</h4>
+        <h4>Pression - {{ data.pressure }}hPa</h4>
         <h4>Vent - {{ data.wind_speed }}Km/h</h4>
       </div>
     </div>
