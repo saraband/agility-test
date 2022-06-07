@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const ENGINE_ID = "0e4bd950d3082b678"
-const API_KEY = "AIzaSyBvqhnxNQ3pHBXkIMNbaO0gsloROadDrOA"
+const API_KEY = "AIzaSyDmOQF6tsFd3ReB8IM7D2GyMi4yUjLtd1Y"
 
 // Retrieve Images for a specific location and try to find the best-suited one for a background
 export async function findCityImage (city) {
