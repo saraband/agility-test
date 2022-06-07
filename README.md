@@ -10,7 +10,7 @@ yarn serve
 
 J'ai mis un peu moins d'une journée à réaliser l'exercice.
 
-Ma démarche a été globalement de faire toute **la partie logique dans un premier temps afin d'identifier un maxium de problématiques techniques en aval** (Je dirais que ça m'a pris à peu près 50% de mon temps de travail alloué): la connexion et la récupération des données de forecast avec l'API de OpenWeather, les interactions majeures de l'interface (La barre d'autocomplétion, les routes, le toggle de la page de forecast et l'affichage des données formattées).
+Ma démarche a été globalement de faire toute **la partie logique dans un premier temps afin d'identifier un maxium de problématiques techniques en aval** (Je dirais que ça m'a pris à peu près 50% de mon temps de travail alloué): la récupération des données de forecast avec l'API de OpenWeather, les interactions majeures de l'interface (La barre d'autocomplétion, les routes, le toggle de la page de forecast et l'affichage des données formattées).
 
 J'ai aussi passé du temps à chercher une solution relativement propre pour comment récupérer une image de background pour une ville donnée de manière dynamique.
 
@@ -22,7 +22,7 @@ Le reste du temps de travail (~40%) est passé sur le style, l'intégration du d
 Globalement, j'ai cherché à faire des composants indépendants et qui concentrent leur logique au même endroit afin de faciliter leur maintenance et leur developpement ultérieur. Par ailleurs, j'ai cherché à laisser le code le plus lisible et maintenable possible en évitant de scinder trop vite en petits composants génériques.
 ## Barre d'autocomplétion et recherche de ville
 
-Pour la recherche de lieu, j'ai pensé à une barre d'autocomplétion (bien qu'elle ne soit pas spécifiée dans le design). Ca permet à l'utilisateur de trouver plus facilement un lieu et aussi **régler le problème des villes qui ont le même nom** qui peut subvenir parfois (Paris est par exemple la ville de France mais est aussi le nom de plusieurs autres villes dans le monde).
+Pour la recherche de lieu, j'ai pensé à une barre d'autocomplétion (bien qu'elle ne soit pas spécifiée dans le design). Ca permet à l'utilisateur de trouver plus facilement un lieu et aussi **régler le problème des villes qui ont le même nom** qui peut subvenir parfois (Par exemple y'a Paris en France mais c'est aussi le nom de plusieurs autres villes dans le monde).
 
 Pour l'implémentation technique de la barre d'autocomplétion, j'ai fait attention à **utiliser un debounce pour éviter de faire trop d'appels inutiles à l'API**
 
@@ -30,11 +30,11 @@ J'ai aussi pensé à faire un composant générique *AutocompleteInput* qui aura
 
 ## Routing
 
-Pas énormément de choses à dire à part que j'ai fait attention à ce que les routes soient "indépendantes" d'un quelconque état de l'app. Ca permet qu'un utilisateur puisse copier coller l'url de forecast d'une ville et bien se retrouver au même endroit que s'il était arrivé sur la page via la barre d'autocomplétion (vu que les paramètres sont dans l'URL). Ca permet aussi de restreindre la logique de chaque route à un petit nombre de fichiers.
+Pas énormément de choses à dire à part que j'ai fait attention à ce que la route de forecast soit "indépendante" d'un quelconque état de l'app. Ca permet qu'un utilisateur puisse copier coller l'url de forecast d'une ville et bien se retrouver au même endroit que s'il était arrivé sur la page via la barre d'autocomplétion (vu que les paramètres sont dans l'URL). Ca permet aussi en général de restreindre la logique de chaque route à un petit nombre de fichiers.
 
 ## Recherche de background-image dynamique
 
-J'ai passé pas mal de temps à chercher sur internet des APIS qui me permettraient de résoudre ce problème. Mon idée était de faire une recherche Google image et de récupérer l'URL des premiers résultats pour la mettre en background. Cependant j'ai pas trouvé de solutions straightforward pour faire ça.
+J'ai passé pas mal de temps à chercher sur internet des APIS qui me permettraient de résoudre ce problème. Mon idée de base était de faire une recherche Google image et de récupérer l'URL des premiers résultats pour la mettre en background. Cependant j'ai pas trouvé de solutions straightforward pour faire ça.
 
 J'ai trouvé SerpAPI mais j'me suis rendue compte que c'est une API Node et bien que j'aurais pu faire un serveur Node qui vient ensuite taper dans SerpAPI mais ça aurait probablement été de l'overkill.
 
